@@ -1,0 +1,39 @@
+﻿@model OtelManagerDpr.Models.KullaniciModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+    <div class="container mt-5" style="max-width:400px;">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-4 text-center">Kayıt Ol</h3>
+
+                <form method="post" asp-action="Register">
+                    <div class="mb-3">
+                        <label>Ad Soyad</label>
+                        <input type="text" name="AdSoyad" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Kullanıcı Adı</label>
+                        <input type="text" name="KullaniciAdi" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Şifre</label>
+                        <input type="password" name="sifre" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Kayıt Ol</button>
+                    <a asp-action="Login" class="btn btn-link w-100 mt-2">Zaten hesabın var mı? Giriş yap</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

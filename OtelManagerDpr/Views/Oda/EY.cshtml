@@ -1,0 +1,42 @@
+﻿@model OtelManagerDpr.Models.OdaModel
+@{
+    ViewData["Title"] = "Oda Ekle/Düzenle";
+}
+
+<h2>@(Model == null ? "Yeni Oda Ekle" : "Odayı Düzenle")</h2>
+
+<form asp-action="EY" method="post" style="max-width:500px;">
+    <input type="hidden" name="OdaNo" value="@(Model?.OdaNo ?? 0)" />
+
+    <div class="mb-3">
+        <label>Oda Kodu</label>
+        <input type="text" name="OdaKodu" class="form-control" value="@Model?.OdaKodu" required />
+    </div>
+    <div class="mb-3">
+        <label>Oda Tipi</label>
+        <select name="OdaTipi" class="form-select" required>
+            <option value="">Seçiniz</option>
+            <option value="Standart" selected="@(Model?.OdaTipi == "Standart")">Standart</option>
+            <option value="Deluxe" selected="@(Model?.OdaTipi == "Deluxe")">Deluxe</option>
+            <option value="Suit" selected="@(Model?.OdaTipi == "Suit")">Suit</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Fiyat</label>
+        <input type="number" step="0.01" name="Fiyat" class="form-control" value="@Model?.Fiyat" required />
+    </div>
+    <div class="mb-3">
+        <label>Kapasite</label>
+        <input type="number" name="Kapasite" class="form-control" value="@Model?.Kapasite" required />
+    </div>
+    <div class="mb-3">
+        <label>Durum</label>
+        <select name="Durum" class="form-select">
+            <option value="Bos" selected="@(Model?.Durum == "Bos")">Boş</option>
+            <option value="Dolu" selected="@(Model?.Durum == "Dolu")">Dolu</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>

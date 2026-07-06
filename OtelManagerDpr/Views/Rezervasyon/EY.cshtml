@@ -1,0 +1,46 @@
+﻿@model OtelManagerDpr.Models.RezervasyonModel
+@{
+    ViewData["Title"] = "Rezervasyon Ekle";
+}
+
+<h2>Yeni Rezervasyon Ekle</h2>
+
+<form asp-action="EY" method="post" style="max-width:500px;">
+    <input type="hidden" name="RezervasyonNo" value="@(Model?.RezervasyonNo ?? 0)" />
+
+    <div class="mb-3">
+        <label>Müşteri</label>
+        <select name="MusteriNo" class="form-select" required>
+            <option value="">Seçiniz</option>
+            @foreach (var m in (List<OtelManagerDpr.Models.MusteriModel>)ViewBag.Musteriler)
+            {
+                <option value="@m.MusteriNo">@m.AdSoyad</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Oda</label>
+        <select name="OdaNo" class="form-select" required>
+            <option value="">Seçiniz</option>
+            @foreach (var o in (List<OtelManagerDpr.Models.OdaModel>)ViewBag.Odalar)
+            {
+                <option value="@o.OdaNo">@o.OdaKodu (@o.OdaTipi)</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Giriş Tarihi</label>
+        <input type="date" name="GirisTarihi" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Çıkış Tarihi</label>
+        <input type="date" name="CikisTarihi" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Toplam Tutar</label>
+        <input type="number" step="0.01" name="ToplamTutar" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>

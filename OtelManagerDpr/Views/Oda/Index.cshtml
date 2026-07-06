@@ -1,0 +1,48 @@
+﻿@model List<OtelManagerDpr.Models.OdaModel>
+@{
+    ViewData["Title"] = "Odalar";
+}
+
+<h2>Odalar</h2>
+<a asp-action="EY" class="btn btn-success mb-3">+ Yeni Oda Ekle</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Oda No</th>
+            <th>Oda Kodu</th>
+            <th>Tipi</th>
+            <th>Fiyat</th>
+            <th>Kapasite</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OdaNo</td>
+                <td>@item.OdaKodu</td>
+                <td>@item.OdaTipi</td>
+                <td>@item.Fiyat ₺</td>
+                <td>@item.Kapasite</td>
+                <td>
+                    @if (item.Durum == "Bos")
+                    {
+                        <span class="badge bg-success">Boş</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Dolu</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="EY" asp-route-id="@item.OdaNo" class="btn btn-sm btn-primary">Düzenle</a>
+                    <a asp-action="Delete" asp-route-id="@item.OdaNo" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
