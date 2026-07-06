@@ -46,13 +46,19 @@ Projeyi yerel geliştirme ortamınızda çalıştırmak için aşağıdaki adım
      dotnet run --project OtelManagerDpr/OtelManagerDpr.csproj
      ```
 
-## Proje Klasör Yapısı
+## ScreenShot
+<img width="1920" height="1080" alt="Ekran Görüntüsü (126)" src="https://github.com/user-attachments/assets/0ef859c2-9e92-4e26-a06b-f1bf400d091c" />
 
-- **`Controllers/`**: Uygulamanın HTTP isteklerini işleyen, iş mantığını yönlendiren (AccountController, MusteriController vb.) denetleyiciler.
-- **`Models/`**: Dapper ile veritabanı tablolarının maplendiği model sınıfları ve yardımcı araçlar (PasswordHelper vs.).
-- **`Views/`**: Kullanıcıya sunulan Razor arayüz sayfaları.
-- **`wwwroot/`**: CSS, JS, kütüphaneler (lib) ve resim dosyaları gibi statik kaynaklar.
+<img width="1920" height="1080" alt="Ekran Görüntüsü (127)" src="https://github.com/user-attachments/assets/7d73e1aa-428b-4d4a-a709-77d724e3e63e" />
 
-## Lisans
+<img width="1920" height="1080" alt="Ekran Görüntüsü (128)" src="https://github.com/user-attachments/assets/34cc05db-7d13-467f-b405-17a9b44150ee" />
 
-Projede kullanılan [QuestPDF Community Lisansı](https://www.questpdf.com/license.html) ve EPPlus lisans kuralları göz önünde bulundurulmalıdır. Genel proje kodları için dilediğiniz gibi kullanım sağlayabilirsiniz.
+<img width="1920" height="1080" alt="Ekran Görüntüsü (129)" src="https://github.com/user-attachments/assets/d7d347e5-d8b2-42ac-81f1-f45eba13f7dc" />
+
+<img width="1920" height="1080" alt="Ekran Görüntüsü (130)" src="https://github.com/user-attachments/assets/2e3ee190-de68-4336-9d7d-3e2ea3088234" />
+
+<img width="1920" height="1080" alt="Ekran Görüntüsü (131)" src="https://github.com/user-attachments/assets/f60dacee-e128-4577-bd16-ee23ee533a04" />
+<img width="1920" height="1080" alt="Ekran Görüntüsü (132)" src="https://github.com/user-attachments/assets/2dda00a1-1180-45a2-9360-63288030b809" />
+
+
+
